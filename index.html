@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Live Currency Exchanger</title>
-<link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    <script src="./assets/js/app.js"></script>
-</body>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Live Currency Exchanger</h1>
+      </div>
+
+      <div class="input-row">
+        <input type="number" id="amount" />
+        <select id="fromCurrency" class="currency-select">
+          <option value="USD">United State Dollor</option>
+          <option value="EUR">Euro</option>
+          <option value="INR">Indian Rupee</option>
+          <option value="AUD">Australian Dollar</option>
+          <option value="CAD">Canadian Dollar</option>
+        </select>
+      </div>
+
+      <div class="input-row">
+        <div class="result">
+          <p id="result"></p>
+        </div>
+        <select id="toCurrency" class="currency-select">
+          <option value="USD">United State Dollor</option>
+          <option value="EUR">Euro</option>
+          <option value="INR">Indian Rupee</option>
+          <option value="AUD">Australian Dollar</option>
+          <option value="CAD">Canadian Dollar</option>
+        </select>
+      </div>
+
+      <div class="end">
+        <span>Thanks!</span>
+      </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
