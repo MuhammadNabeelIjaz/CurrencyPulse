@@ -3,29 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const fromCurrencySelect = document.getElementById("fromCurrency");
   const toCurrencySelect = document.getElementById("toCurrency");
   const resultParagraph = document.getElementById("result");
+  const clearFieldsButton = document.getElementById("clearFieldsbutton");
 
   function getExchangeRate() {
     const amount = amountInput.value;
     const fromCurrency = fromCurrencySelect.value;
     const toCurrency = toCurrencySelect.value;
 
-    // console.log(
-    //     "( Ammount :",
-    //     amount,
-    //     ") ",
-    //     "FromCurrency :",
-    //     fromCurrency,
-    //     " -> ",
-    //     "ToCurrency:",
-    //     toCurrency
-    //   );
-
     if (amount === "") {
       resultParagraph.textContent = "";
       return;
     }
-
-    //  API Integration
+    // API Integration
     const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
 
     fetch(url)
@@ -47,7 +36,15 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  function clearFields() {
+    amountInput.value = "";
+    fromCurrencySelect.selectedIndex = 0;
+    toCurrencySelect.selectedIndex = 0;
+    resultParagraph.textContent = "";
+  }
+
   amountInput.addEventListener("input", getExchangeRate);
   fromCurrencySelect.addEventListener("change", getExchangeRate);
   toCurrencySelect.addEventListener("change", getExchangeRate);
+  clearFieldsButton.addEventListener("click", clearFields);
 });
