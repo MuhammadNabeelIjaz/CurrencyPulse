@@ -3,17 +3,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const fromCurrencySelect = document.getElementById("fromCurrency");
   const toCurrencySelect = document.getElementById("toCurrency");
   const resultParagraph = document.getElementById("result");
+  const copyResultButton = document.getElementById("copyResultbutton");
   const clearFieldsButton = document.getElementById("clearFieldsbutton");
 
   function getExchangeRate() {
     const amount = amountInput.value;
     const fromCurrency = fromCurrencySelect.value;
     const toCurrency = toCurrencySelect.value;
+    // Validation:
+    // Ensure input fields are not left empty.
 
     if (amount === "") {
-      resultParagraph.textContent = "";
+      resultParagraph.textContent = "Enter amount to convert.";
       return;
     }
+
+    // Ensure the entered amount is a valid number greater than zero.
+    if (amount <= 0) {
+      resultParagraph.textContent = "Enter a valid amount.";
+      return;
+    }
+
     // API Integration
     const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
 
@@ -22,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         if (data.rates[toCurrency]) {
           const exchangeRate = data.rates[toCurrency];
+          console.log(exchangeRate);
+
           const convertedAmount = (amount * exchangeRate).toFixed(2);
           resultParagraph.textContent = `${convertedAmount}`;
         } else {
@@ -36,6 +48,23 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  function copyResult() {
+    const resultText = resultParagraph.textContent;
+    if (resultText) {
+      navigator.clipboard
+        .writeText(resultText)
+        .then(() => {
+          alert("Result copied to clipboard.");
+        })
+        .catch((error) => {
+          alert("Failed to copy result.");
+          console.error(error);
+        });
+    } else {
+      alert("No result to copy.");
+    }
+  }
+
   function clearFields() {
     amountInput.value = "";
     fromCurrencySelect.selectedIndex = 0;
@@ -46,5 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
   amountInput.addEventListener("input", getExchangeRate);
   fromCurrencySelect.addEventListener("change", getExchangeRate);
   toCurrencySelect.addEventListener("change", getExchangeRate);
+  copyResultButton.addEventListener("click", copyResult);
   clearFieldsButton.addEventListener("click", clearFields);
 });
