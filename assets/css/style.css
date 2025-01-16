@@ -75,3 +75,32 @@ body {
   background-color: rgb(224, 226, 227);
   font-size: 20px;
 }
+#copyResultbutton {
+  background-color: rgba(3, 55, 8, 0.66);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#clearFieldsbutton {
+  background-color: rgba(255, 0, 0, 0.59);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#copyResultbutton:hover {
+  background-color: rgba(3, 55, 8, 0.9);
+}
+#clearFieldsbutton:hover {
+  background-color: transparent;
+  border: 1px solid rgb(208, 18, 18);
+  color: red;
+  font-weight: bold;
+}
