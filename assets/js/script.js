@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    //  API Integration
     const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
 
     fetch(url)
