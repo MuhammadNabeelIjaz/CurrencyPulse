@@ -12,16 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const toCurrency = toCurrencySelect.value;
     // Validation:
     // Ensure input fields are not left empty.
-
-    if (amount === "") {
-      resultParagraph.textContent = "Enter amount to convert.";
-      return;
-    }
-
     // Ensure the entered amount is a valid number greater than zero.
-    if (amount <= 0) {
-      resultParagraph.textContent = "Enter a valid amount.";
-      return;
+    if (amount === "" || amount <= 0) {
+  resultParagraph.textContent = "Enter a valid amount.";
+  return;
     }
 
     // API Integration
