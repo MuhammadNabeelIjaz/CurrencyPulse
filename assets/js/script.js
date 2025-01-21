@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function copyResult() {
     const resultText = resultParagraph.textContent;
-    if (resultText === "Enter amount to convert." || amount === "") {
+    if (resultText === "Enter a valid amount." || resultText === "") {
       alert("Sorry, nothing to copy.");
       return;
     }
