@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="CurrencyPulse banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="18" fill="url(#bg)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.06">
+    <path d="M0 60H1200M0 120H1200M0 180H1200M0 240H1200"/>
+    <path d="M200 0V300M400 0V300M600 0V300M800 0V300M1000 0V300"/>
+  </g>
+  <!-- pulse line -->
+  <path d="M0 215 H300 L330 215 L350 165 L380 255 L405 190 L425 215 H1200" fill="none" stroke="url(#accent)" stroke-width="3" stroke-opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- logo -->
+  <g transform="translate(90,95)">
+    <circle cx="55" cy="55" r="55" fill="url(#accent)"/>
+    <path d="M30 42 H78 L66 30 M80 68 H32 L44 80" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="235" y="140" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="700" fill="#ffffff">CurrencyPulse</text>
+  <text x="237" y="182" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="url(#accent)">Real-Time Currency Converter</text>
+  <text x="237" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#cbd5e1">Live exchange rates  •  10+ currencies  •  HTML · CSS · JavaScript</text>
+  <g font-family="Consolas, monospace" font-size="22" fill="#ffffff" fill-opacity="0.85">
+    <text x="930" y="95">USD → PKR</text>
+    <text x="960" y="135" fill="#34d399">3 = 832.47</text>
+  </g>
+</svg>
